@@ -1,0 +1,133 @@
+BAOZI STORE — API REST
+
+1. APRESENTAÇÃO DO PROJETO
+
+O Baozi Store é um sistema desenvolvido para gerenciar uma loja fictícia especializada na venda de baozi, um tipo de pão tradicional asiático recheado.
+
+A aplicação foi desenvolvida utilizando Java e Spring Boot para a criação de uma API REST, MySQL para o armazenamento dos dados e Maven para o gerenciamento do projeto.
+
+O sistema permite cadastrar, consultar, listar, atualizar e excluir produtos, clientes e pedidos.
+
+2. OBJETIVO
+
+O objetivo do projeto é desenvolver uma API REST integrada a um banco de dados relacional, aplicando os conceitos de programação orientada a objetos, persistência de dados e operações CRUD.
+
+CRUD significa:
+- Create: cadastrar registros.
+- Read: consultar e listar registros.
+- Update: atualizar registros.
+- Delete: excluir registros.
+3. ENTIDADES DO SISTEMA
+
+3.1. Produto (Product)
+
+A entidade Produto representa os itens comercializados pela loja.
+
+Campos:
+- id: identificador único do produto, gerado automaticamente.
+- name: nome do produto.
+- description: descrição do produto.
+- price: preço do produto.
+
+3.2. Cliente (Client)
+
+A entidade Cliente representa as pessoas que realizam compras na loja.
+
+Campos:
+- id: identificador único do cliente, gerado automaticamente.
+- nome: nome do cliente.
+- clienteDesde: data a partir da qual o cliente está registrado no sistema.
+
+3.3. Pedido (Order)
+
+A entidade Pedido representa uma compra realizada por um cliente.
+
+Campos:
+- id: identificador único do pedido, gerado automaticamente.
+- dataPedido: data em que o pedido foi realizado.
+- client: referência ao cliente associado ao pedido.
+- product: referência ao produto associado ao pedido.
+
+3.4. Relacionamentos
+
+Cada pedido está associado a um cliente e a um produto.
+
+O relacionamento entre Pedido e Cliente permite identificar quem realizou a compra. O relacionamento entre Pedido e Produto permite identificar qual item foi solicitado.
+
+Os dados são armazenados no banco de dados MySQL.
+
+4. ENDPOINTS DA API
+
+A API REST utiliza os métodos HTTP para realizar operações sobre produtos, clientes e pedidos.
+
+Os principais métodos utilizados são:
+- GET: consultar e listar registros.
+- POST: cadastrar novos registros.
+- PUT: atualizar registros existentes.
+- DELETE: excluir registros.
+
+4.1. Produtos
+
+Endereço base: /api/products
+
+- GET /api/products
+  Lista todos os produtos cadastrados.
+
+- GET /api/products/{id}
+  Consulta um produto pelo seu identificador.
+
+- POST /api/products
+  Cadastra um novo produto.
+
+- PUT /api/products/{id}
+  Atualiza os dados de um produto existente.
+
+- DELETE /api/products/{id}
+  Exclui um produto pelo seu identificador.
+
+4.2. Clientes
+
+Endereço base: /api/clients
+
+- GET /api/clients
+  Lista todos os clientes cadastrados.
+
+- GET /api/clients/{id}
+  Consulta um cliente pelo seu identificador.
+
+- POST /api/clients
+  Cadastra um novo cliente.
+
+- PUT /api/clients/{id}
+  Atualiza os dados de um cliente existente.
+
+- DELETE /api/clients/{id}
+  Exclui um cliente pelo seu identificador.
+
+4.3. Pedidos
+
+Endereço base: /api/orders
+
+- GET /api/orders
+  Lista todos os pedidos cadastrados.
+
+- GET /api/orders/{id}
+  Consulta um pedido pelo seu identificador.
+
+- POST /api/orders
+  Cadastra um novo pedido.
+
+- PUT /api/orders/{id}
+  Atualiza os dados de um pedido existente.
+
+- DELETE /api/orders/{id}
+  Exclui um pedido pelo seu identificador.
+
+5. TECNOLOGIAS UTILIZADAS
+
+- Java: linguagem de programação utilizada no desenvolvimento.
+- Spring Boot: framework utilizado para criar a API REST.
+- Spring Data JPA: utilizado para facilitar o acesso e a persistência dos dados.
+- MySQL: banco de dados relacional utilizado para armazenar as informações.
+- Maven: ferramenta utilizada para gerenciar as dependências e a construção do projeto.
+- Postman: ferramenta utilizada para testar os endpoints da API.
